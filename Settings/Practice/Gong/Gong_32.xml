@@ -1,4 +1,4 @@
-﻿<Gongs><List>
+<Gongs><List>
 	<Gong Name="Gong_32">
 		<DisplayName>琼楼剑御玄典</DisplayName>
 		<Desc>曾经二十六层楼的嫡传功法，与三清有密切的联系，似乎是丹霞山炼器法的源头。在上古时期，有两个以炼器与剑修著称的门派，一个是御剑山庄，一个是二十六层楼，而后者更注重炼器为修行。如今两大宗门皆已隐世，青莲剑宗与丹霞山是其精神传承。</Desc>
@@ -16,12 +16,12 @@
 			<Stage Name="Stage1" Level="3">
 				<DisplayName>观天下</DisplayName>
 				<Desc>琼楼初境，以养知为修行目标，从先人之智观天地之道，为登楼做准备。</Desc>
-				<Value>100</Value>
+				<Value>50100</Value>
 				<Necks>
 					<Neck Location="0.2" Kind="Chance">
 						<DisplayName>览群书</DisplayName>
 						<Desc>欲寻天地之道，必先博览群书。文学基础入门考试。</Desc>
-						<CostTime>50</CostTime>
+						<CostTime>100</CostTime>
 						<SuccessChange>0.1</SuccessChange>
 						<FailedChangeAdd>0.1</FailedChangeAdd>
 						<ItemCost>
@@ -32,7 +32,7 @@
 					<Neck Location="0.4" Kind="Chance">
 						<DisplayName>闻希声</DisplayName>
 						<Desc>欲闻天地之音，必先聆声听乐。音乐基础入门考试。</Desc>
-						<CostTime>150</CostTime>
+						<CostTime>350</CostTime>
 						<SuccessChange>0.3</SuccessChange>
 						<FailedChangeAdd>0.3</FailedChangeAdd>
 						<ItemCost>
@@ -42,7 +42,7 @@
 					<Neck Location="0.6" Kind="Chance">
 						<DisplayName>明数理</DisplayName>
 						<Desc>欲明天地之理，必先衍道术算。数理基础入门考试。</Desc>
-						<CostTime>150</CostTime>
+						<CostTime>350</CostTime>
 						<SuccessChange>0.3</SuccessChange>
 						<FailedChangeAdd>0.3</FailedChangeAdd>
 						<ItemCost>
@@ -52,7 +52,7 @@
 					<Neck Location="0.8" Kind="Chance">
 						<DisplayName>构天工</DisplayName>
 						<Desc>欲构天地之图，必先描画名作。绘画基础入门考试</Desc>
-						<CostTime>150</CostTime>
+						<CostTime>350</CostTime>
 						<SuccessChange>0.3</SuccessChange>
 						<FailedChangeAdd>0.3</FailedChangeAdd>
 						<ItemCost>
@@ -71,7 +71,7 @@
 			<Stage Name="Stage2" Level="5">
 				<DisplayName>舞众器</DisplayName>
 				<Desc>琼楼第二境，以武知兵，炼体之余为成炉奠基。</Desc>
-				<Value>15000</Value>
+				<Value>150000</Value>
 				<Necks>
 					<Neck Location="0.33" Kind="Chance">
 						<DisplayName>入微</DisplayName>
@@ -126,7 +126,7 @@
 			<Stage Name="Stage3" Level="6">
 				<DisplayName>熔万金</DisplayName>
 				<Desc>琼楼第三境，化体为炉，凝灵成火，为剑炉金丹做足准备。</Desc>
-				<Value>140000</Value>
+				<Value>1400000</Value>
 				<Necks>
 					<Neck Location="0.45" Kind="Chance">
 						<DisplayName>气海化炉</DisplayName>
@@ -161,7 +161,7 @@
 			<Stage Name="Stage4" Level="9">
 				<DisplayName>剑炉</DisplayName>
 				<Desc>琼楼终境，可吞噬天下众器，拘器魂于体，化其为镇，踏出登楼第一步。</Desc>
-				<Value>900000</Value>
+				<Value>9000000</Value>
 				<Necks>
 					<Neck Location="0.03" Kind="Thunder">
 						<DisplayName>初器劫</DisplayName>
@@ -189,7 +189,7 @@
 			<Stage Name="Stage5" Level="10">
 				<DisplayName>登楼</DisplayName>
 				<Desc>登顶之途，二十六层楼，二十七杯酒，一步一劫，成山巅剑仙。</Desc>
-				<Value>800000</Value>
+				<Value>8000000</Value>
 				<Necks>
 					<Neck Location="0.125" Kind="Thunder">
 						<DisplayName>第二层楼</DisplayName>
@@ -244,7 +244,7 @@
 			<Stage Name="Stage6" Level="11">
 				<DisplayName>登楼</DisplayName>
 				<Desc>登顶之途，二十六层楼，二十七杯酒，一步一劫，成山巅剑仙。</Desc>
-				<Value>800000</Value>
+				<Value>8000000</Value>
 				<Necks>
 					<Neck Location="0.125" Kind="Thunder">
 						<DisplayName>第十层楼</DisplayName>
@@ -300,7 +300,7 @@
 			<Stage Name="Stage7" Level="12">
 				<DisplayName>登楼</DisplayName>
 				<Desc>登顶之途，二十六层楼，二十七杯酒，一步一劫，成山巅剑仙。</Desc>
-				<Value>800000</Value>
+				<Value>8000000</Value>
 				<Necks>
 					<Neck Location="0.125" Kind="Thunder">
 						<DisplayName>第十八层楼</DisplayName>
@@ -356,7 +356,7 @@
 			<Stage Name="Stage8" Level="13">
 				<DisplayName>登楼</DisplayName>
 				<Desc>登顶之途，二十六层楼，二十七杯酒，一步一劫，成山巅剑仙。</Desc>
-				<Value>260000</Value>
+				<Value>26000000</Value>
 				<Necks>
 					<Neck Location="0.5" Kind="Thunder">
 						<DisplayName>第二十六层楼</DisplayName>
