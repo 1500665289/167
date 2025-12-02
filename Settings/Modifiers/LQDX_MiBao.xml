@@ -1,15 +1,19 @@
-﻿<ModifierDefs><List>
+<ModifierDefs>
+<List>
+	<!-- 特殊NPC法宝效果：跃 -->
 	<Modifier Name="Modifier_SpNpc_FabaoMiao" Type="Normal">
 		<DisplayName>跃</DisplayName>
 		<Desc>此人御器灵动，剑光分化跳跃。</Desc>
-		<MaxStack>1</MaxStack>
-		<Duration>-1</Duration>
-		<Display>1</Display>
-		<Sync>1</Sync>
+		<MaxStack>1</MaxStack>          <!-- 不可叠加 -->
+		<Duration>-1</Duration>          <!-- 永久效果 -->
+		<Display>1</Display>            <!-- 在UI中显示 -->
+		<Sync>1</Sync>                 <!-- 需要同步 -->
 		<Properties>
-			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="-0.9"/>
+			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="-0.9"/>  <!-- 法宝灵气上限降低90% -->
 		</Properties>
 	</Modifier> 
+	
+	<!-- 秘宝：仙人泪 -->
 	<Modifier Name="LQDX_MiBao_XRL" Type="Normal">
 		<DisplayName>仙人泪</DisplayName>
 		<Desc>仙人之泪，永不下坠。</Desc>
@@ -18,9 +22,11 @@
 		<Display>1</Display>
 		<Sync>1</Sync>
 		<EffectBind>
-			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>
+			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>  <!-- 绑定愤怒火焰特效 -->
 		</EffectBind>
 	</Modifier> 
+	
+	<!-- 秘宝：帝剑 -->
 	<Modifier Name="LQDX_MiBao_BCJ" Type="Normal">
 		<DisplayName>帝剑</DisplayName>
 		<Desc>剑中帝者，镇压万剑。</Desc>
@@ -29,31 +35,37 @@
 		<Display>1</Display>
 		<Sync>1</Sync>
 		<EffectBind>
-			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>
+			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>  <!-- 绑定愤怒火焰特效 -->
 		</EffectBind>
 	</Modifier> 
+	
+	<!-- 帝剑的镇压debuff效果 -->
 	<Modifier Name="LQDX_MiBao_BCJ_debuff" Type="Normal">
 		<DisplayName>镇压</DisplayName>
 		<Desc></Desc>
 		<MaxStack>1</MaxStack>
-		<Duration>9</Duration>
+		<Duration>9</Duration>           <!-- 短暂持续时间 -->
 		<Display>1</Display>
 		<Sync>1</Sync>
 		<Properties>
-			<li Name="NpcFight_FabaoCoolDownAddP" AddV="9"/>
-			<li Name="NpcFight_FabaoFlySpeedAddP" BAddP="-999"/>
-			<li Name="NpcFight_FabaoPowerAddP" BAddP="-0.5"/>
+			<li Name="NpcFight_FabaoCoolDownAddP" AddV="9"/>      <!-- 法宝冷却时间增加9 -->
+			<li Name="NpcFight_FabaoFlySpeedAddP" BAddP="-999"/>   <!-- 法宝飞行速度极大降低 -->
+			<li Name="NpcFight_FabaoPowerAddP" BAddP="-0.5"/>     <!-- 法宝威力降低50% -->
 		</Properties>
 	</Modifier> 
+	
+	<!-- 秘宝：受损状态（通过Lua脚本控制） -->
 	<Modifier Name="LQDX_MiBao_ZMH" Type="Normal">
 		<DisplayName>受损</DisplayName>
 		<Desc></Desc>
 		<MaxStack>1</MaxStack>
 		<Duration>-1</Duration>
-		<Display>0</Display>
+		<Display>0</Display>             <!-- 不在UI中显示 -->
 		<Sync>1</Sync>
-		<LuaClassName>LQDX_MiBao_ZMH</LuaClassName>
+		<LuaClassName>LQDX_MiBao_ZMH</LuaClassName>  <!-- 关联Lua脚本类 -->
 	</Modifier> 
+	
+	<!-- 秘宝：诛灭-白日形态 -->
 	<Modifier Name="LQDX_MiBao_ZMH_Day" Type="Normal">
 		<DisplayName>白日</DisplayName>
 		<Desc>煌煌白日，烈烈炎魂。</Desc>
@@ -62,10 +74,12 @@
 		<Display>1</Display>
 		<Sync>1</Sync>
 		<EffectBind>
-			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>
+			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>  <!-- 绑定愤怒火焰特效 -->
 		</EffectBind>
-		<LuaClassName>LQDX_MiBao_ZMH_Day</LuaClassName>
+		<LuaClassName>LQDX_MiBao_ZMH_Day</LuaClassName>  <!-- 关联Lua脚本类 -->
 	</Modifier> 
+	
+	<!-- 秘宝：诛灭-玄夜形态 -->
 	<Modifier Name="LQDX_MiBao_ZMH_Night" Type="Normal">
 		<DisplayName>玄夜</DisplayName>
 		<Desc>泠泠玄夜，肃肃杀机。</Desc>
@@ -73,8 +87,10 @@
 		<Duration>-1</Duration>
 		<Display>1</Display>
 		<Sync>1</Sync>
-		<LuaClassName>LQDX_MiBao_ZMH_Night</LuaClassName>
+		<LuaClassName>LQDX_MiBao_ZMH_Night</LuaClassName>  <!-- 关联Lua脚本类 -->
 	</Modifier> 
+	
+	<!-- 秘宝：噬灵 -->
 	<Modifier Name="LQDX_MiBao_XRYY" Type="Normal">
 		<DisplayName>噬灵</DisplayName>
 		<Desc>饥饿凶魂，吞噬灵肉。</Desc>
@@ -83,9 +99,11 @@
 		<Display>1</Display>
 		<Sync>1</Sync>
 		<EffectBind>
-			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>
+			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>  <!-- 绑定愤怒火焰特效 -->
 		</EffectBind>
 	</Modifier> 
+	
+	<!-- 秘宝：六道（佛系秘宝） -->
 	<Modifier Name="LQDX_MiBao_DNP" Type="Normal">
 		<DisplayName>六道</DisplayName>
 		<Desc>阿弥陀佛，我佛慈悲。</Desc>
@@ -94,16 +112,18 @@
 		<Display>1</Display>
 		<Sync>1</Sync>
 		<Properties>
-			<li Name="NpcFight_FabaoCoolDownAddP" AddV="-9"/>
-			<li Name="NpcFight_FabaoNum" AddV="-999"/>
-			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="9999"/>
-			<li Name="NpcFight_FabaoRepelResistanceAddV" BAddP="99"/>
-			<li Name="NpcFight_ShieldConversionRate" AddV="6"/>
+			<li Name="NpcFight_FabaoCoolDownAddP" AddV="-9"/>        <!-- 法宝冷却时间减少9 -->
+			<li Name="NpcFight_FabaoNum" AddV="-999"/>               <!-- 法宝数量极大减少 -->
+			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="9999"/>      <!-- 法宝灵气上限极大增加 -->
+			<li Name="NpcFight_FabaoRepelResistanceAddV" BAddP="99"/> <!-- 法宝击退抗性极大增加 -->
+			<li Name="NpcFight_ShieldConversionRate" AddV="6"/>      <!-- 护盾转换率增加6 -->
 		</Properties>
 		<EffectBind>
-			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>
+			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>  <!-- 绑定愤怒火焰特效 -->
 		</EffectBind>
 	</Modifier> 
+	
+	<!-- 秘宝：青莲剑 -->
 	<Modifier Name="LQDX_MiBao_QLJ" Type="Normal">
 		<DisplayName>青莲</DisplayName>
 		<Desc>一曲长歌，一剑天涯。</Desc>
@@ -112,7 +132,8 @@
 		<Display>1</Display>
 		<Sync>1</Sync>
 		<EffectBind>
-			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>
+			<li Path="Effect/gsq/Prefab/BodyAngerFire"/>  <!-- 绑定愤怒火焰特效 -->
 		</EffectBind>
 	</Modifier> 
-</List></ModifierDefs>
+</List>
+</ModifierDefs>
