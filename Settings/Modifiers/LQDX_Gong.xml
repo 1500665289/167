@@ -1,58 +1,61 @@
-﻿<ModifierDefs><List>
+<ModifierDefs>
+<List>
+	<!-- 封神天兵后遗症效果 -->
 	<Modifier Name="LQDX_fstbhm" Type="Normal">
 		<DisplayName>封神天兵</DisplayName>
 		<Desc>使用封神天兵的后遗症，元神进入寂灭9天。</Desc>
-		<MaxStack>1</MaxStack>
-		<Duration>5400</Duration>
-		<Display>1</Display>
-		<Sync>1</Sync>
+		<MaxStack>1</MaxStack>          <!-- 最大叠加层数为1 -->
+		<Duration>5400</Duration>        <!-- 持续时间5400单位（游戏时间） -->
+		<Display>1</Display>            <!-- 在UI中显示 -->
+		<Sync>1</Sync>                 <!-- 需要同步到客户端 -->
 		<Modifiers>
-			<li>Modifier_Item_ZaoHuaYuLu1</li>
+			<li>Modifier_Item_ZaoHuaYuLu1</li>  <!-- 关联其他状态效果 -->
 		</Modifiers>
 		<Damages>
-			<li Part="Brain" Damage="ZaoHuaYuLu_YuanShenJiMie" Value="0.8"/>
+			<li Part="Brain" Damage="ZaoHuaYuLu_YuanShenJiMie" Value="0.8"/>  <!-- 对大脑部位造成元神寂灭伤害 -->
 		</Damages>
 	</Modifier> 
 
+	<!-- 星辰封锁debuff效果 -->
 	<Modifier Name="LQDX_xb_debuff" Type="Normal">
 		<DisplayName>星辰封锁</DisplayName>
 		<Desc>法宝的威力与灵气上限被强行封印。</Desc>
 		<MaxStack>1</MaxStack>
-		<Duration>90</Duration>
+		<Duration>90</Duration>          <!-- 较短持续时间 -->
 		<Display>1</Display>
 		<Properties>
-			<li Name="NpcFight_FabaoPowerAddP" BAddP="-999"/>
-			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="-999"/>
-
+			<li Name="NpcFight_FabaoPowerAddP" BAddP="-999"/>      <!-- 法宝威力大幅降低 -->
+			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="-999"/>    <!-- 法宝灵气上限大幅降低 -->
 		</Properties>
 	</Modifier> 
+	
+	<!-- 摘星剑被动效果 -->
 	<Modifier Name="LQDX摘星剑" Type="Normal">
+		<DisplayName></DisplayName>      <!-- 空显示名，为被动效果 -->
+		<Desc></Desc>
+		<MaxStack>0</MaxStack>           <!-- 0表示不可叠加 -->
+		<Duration>-1</Duration>          <!-- -1表示永久效果 -->
+		<Display>0</Display>             <!-- 不在UI中显示 -->
+		<Properties>
+			<li Name="NpcFight_FabaoPowerAddP" BAddP="-0.6"/>      <!-- 法宝威力降低60% -->
+			<li Name="NpcFight_FabaoLingRecoverK" AddV="3"/>       <!-- 灵气恢复系数增加3 -->
+		</Properties>
+	</Modifier> 
+
+	<!-- 星汉腾光剑阵效果 -->
+	<Modifier Name="LQDX星汉腾光剑阵" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
 		<MaxStack>0</MaxStack>
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcFight_FabaoPowerAddP" BAddP="-0.6"/>
-			<li Name="NpcFight_FabaoLingRecoverK" AddV="3"/>
-
+			<li Name="NpcFight_FabaoNum" AddV="3"/>                <!-- 可操控法宝数量+3 -->
+			<li Name="NpcFight_ZhenEnginePower" AddV="30"/>        <!-- 阵法引擎威力+30 -->
 		</Properties>
 	</Modifier> 
 
-<Modifier Name="LQDX星汉腾光剑阵" Type="Normal">
-		<DisplayName></DisplayName>
-		<Desc></Desc>
-		<MaxStack>0</MaxStack>
-		<Duration>-1</Duration>
-		<Display>0</Display>
-		<Properties>
-			<li Name="NpcFight_FabaoNum" AddV="3"/>
-			<li Name="NpcFight_ZhenEnginePower" AddV="30"/>
-
-		</Properties>
-	</Modifier> 
-
-
+	<!-- 求知之境系列：不同等级的求知状态效果 -->
 	<Modifier Name="LQDX求知之境1" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -60,26 +63,27 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcLingMaxValue" BAddV="10"/>
-	<li Name="MindStateBaseValue" AddV="5"/>
-	<li Name="FabaoMake_SuccessRateAddV" AddV="0.1"/>
-
+			<li Name="NpcLingMaxValue" BAddV="10"/>                <!-- 灵气上限+10 -->
+			<li Name="MindStateBaseValue" AddV="5"/>               <!-- 心境基础值+5 -->
+			<li Name="FabaoMake_SuccessRateAddV" AddV="0.1"/>      <!-- 法宝制作成功率+10% -->
 		</Properties>
 	</Modifier> 
 
-<Modifier Name="LQDX求知之境2" Type="Normal">
+	<!-- 求知之境2级 -->
+	<Modifier Name="LQDX求知之境2" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
 		<MaxStack>0</MaxStack>
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcLingMaxValue" BAddV="50"/>
-	<li Name="MindStateBaseValue" AddV="5"/>
-	<li Name="FabaoMake_SuccessRateAddV" AddV="0.3"/>
-
+			<li Name="NpcLingMaxValue" BAddV="50"/>                <!-- 灵气上限+50 -->
+			<li Name="MindStateBaseValue" AddV="5"/>
+			<li Name="FabaoMake_SuccessRateAddV" AddV="0.3"/>      <!-- 法宝制作成功率+30% -->
 		</Properties>
 	</Modifier> 
+	
+	<!-- 求知之境3级 -->
 	<Modifier Name="LQDX求知之境3" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -87,12 +91,13 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcLingMaxValue" BAddV="120"/>
-	<li Name="MindStateBaseValue" AddV="5"/>
-	<li Name="FabaoMake_SuccessRateAddV" AddV="0.5"/>
-
+			<li Name="NpcLingMaxValue" BAddV="120"/>               <!-- 灵气上限+120 -->
+			<li Name="MindStateBaseValue" AddV="5"/>
+			<li Name="FabaoMake_SuccessRateAddV" AddV="0.5"/>      <!-- 法宝制作成功率+50% -->
 		</Properties>
 	</Modifier> 
+	
+	<!-- 求知之境4级（最高级） -->
 	<Modifier Name="LQDX求知之境4" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -100,13 +105,13 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcLingMaxValue" BAddV="360"/>
-	<li Name="MindStateBaseValue" AddV="5"/>
-	<li Name="FabaoMake_SuccessRateAddV" AddV="0.7"/>
-
+			<li Name="NpcLingMaxValue" BAddV="360"/>               <!-- 灵气上限+360 -->
+			<li Name="MindStateBaseValue" AddV="5"/>
+			<li Name="FabaoMake_SuccessRateAddV" AddV="0.7"/>      <!-- 法宝制作成功率+70% -->
 		</Properties>
 	</Modifier> 
 
+	<!-- 开炉八法：法宝制作相关加成 -->
 	<Modifier Name="LQDX开炉八法" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -114,15 +119,14 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="FabaoMake_SpeedAddV" AddV="-0.5"/>
-	<li Name="FabaoMake_SuccessRateAddV" AddV="0.5"/>
-	<li Name="FabaoMake_LingInheritRateAddV" AddV="1"/>
-	<li Name="FabaoMake_QualityAddV" AddV="1"/>
-
+			<li Name="FabaoMake_SpeedAddV" AddV="-0.5"/>           <!-- 制作速度减慢 -->
+			<li Name="FabaoMake_SuccessRateAddV" AddV="0.5"/>      <!-- 但成功率提高50% -->
+			<li Name="FabaoMake_LingInheritRateAddV" AddV="1"/>     <!-- 灵气继承率+1 -->
+			<li Name="FabaoMake_QualityAddV" AddV="1"/>             <!-- 制作品质+1 -->
 		</Properties>
 	</Modifier> 
 
-
+	<!-- 天海琅星魂意：阵法相关效果，需要阵法技能 -->
 	<Modifier Name="LQDX天海琅星魂意" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -130,17 +134,16 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcFight_ZhenKeyPointNum" AddV="3"/>
-	<li Name="NpcFight_SpellPowerAddP" AddP="50"/>
-	<li Name="NpcFight_FabaoLingRecoverAddP" AddP="3"/>
-
+			<li Name="NpcFight_ZhenKeyPointNum" AddV="3"/>          <!-- 阵法关键点数+3 -->
+			<li Name="NpcFight_SpellPowerAddP" AddP="50"/>          <!-- 法术威力+50% -->
+			<li Name="NpcFight_FabaoLingRecoverAddP" AddP="3"/>     <!-- 法宝灵气恢复+3% -->
 		</Properties>
 		<Skills>
-			<li Name="Zhen" LevelOver="5"/>
+			<li Name="Zhen" LevelOver="5"/>                        <!-- 需要阵法技能等级大于5 -->
 		</Skills>
 	</Modifier> 
 	
-	
+	<!-- 天火开神秀：极端化的法宝效果，需要手册技能 -->
 	<Modifier Name="LQDX天火开神秀" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -148,32 +151,32 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="FabaoMake_SpeedAddV" AddV="-99"/>
-	<li Name="FabaoMake_LingInheritRateAddV" AddV="-9"/>
-	<li Name="NpcFight_FabaoPowerAddP" AddP="12"/>
-	<li Name="NpcFight_FabaoLingRecoverAddP" AddP="25"/>
-	<li Name="NpcFight_FabaoMaxLingAddP" AddP="25"/>
-	<li Name="FabaoMake_TwelveRateChance" AddV="1"/>
-
+			<li Name="FabaoMake_SpeedAddV" AddV="-99"/>            <!-- 制作速度极大降低 -->
+			<li Name="FabaoMake_LingInheritRateAddV" AddV="-9"/>   <!-- 灵气继承率极大降低 -->
+			<li Name="NpcFight_FabaoPowerAddP" AddP="12"/>         <!-- 但法宝威力+12% -->
+			<li Name="NpcFight_FabaoLingRecoverAddP" AddP="25"/>   <!-- 法宝灵气恢复+25% -->
+			<li Name="NpcFight_FabaoMaxLingAddP" AddP="25"/>       <!-- 法宝灵气上限+25% -->
+			<li Name="FabaoMake_TwelveRateChance" AddV="1"/>        <!-- 特殊几率加成 -->
 		</Properties>
 		<Skills>
-			<li Name="Manual" LevelOver="5"/>
+			<li Name="Manual" LevelOver="5"/>                      <!-- 需要手册技能等级大于5 -->
 		</Skills>
 	</Modifier> 
 
-<Modifier Name="LQDX析构法宝" Type="Normal">
+	<!-- 析构法宝：特殊效果，使用Lua脚本控制 -->
+	<Modifier Name="LQDX析构法宝" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
 		<MaxStack>0</MaxStack>
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="DeepPracticeSpeedSpecialCoefficient" AddP="-99"/>
-
+			<li Name="DeepPracticeSpeedSpecialCoefficient" AddP="-99"/>  <!-- 深度修炼速度极大降低 -->
 		</Properties>
-		<LuaClassName>LQDX_XGFB</LuaClassName>
+		<LuaClassName>LQDX_XGFB</LuaClassName>                 <!-- 关联的Lua类名 -->
 	</Modifier> 
 
+	<!-- 陨日剑：牺牲数量换取质量的策略 -->
 	<Modifier Name="LQDX陨日剑" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -181,14 +184,13 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcFight_FabaoNum" AddV="-4"/>
-		<li Name="NpcFight_FabaoMaxLingAddP" BAddP="9"/>
-		<li Name="NpcFight_FabaoLingRecoverAddP" BAddP="-0.3"/>
-
+			<li Name="NpcFight_FabaoNum" AddV="-4"/>               <!-- 可操控法宝数量-4 -->
+			<li Name="NpcFight_FabaoMaxLingAddP" BAddP="9"/>       <!-- 但法宝灵气上限+900% -->
+			<li Name="NpcFight_FabaoLingRecoverAddP" BAddP="-0.3"/><!-- 灵气恢复略微降低 -->
 		</Properties>
 	</Modifier> 
 
-
+	<!-- 煌空斩真剑意：高级剑意效果，需要高等级法宝技能 -->
 	<Modifier Name="LQDX煌空斩真剑意" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -196,19 +198,20 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcFight_FabaoPowerAddP" BAddP="5"/>
-			<li Name="NpcFight_ShieldResistanceToShui" AddV="0.15"/>
-			<li Name="NpcFight_ShieldResistanceToHuo" AddV="0.15"/>
-			<li Name="NpcFight_ShieldResistanceToTu" AddV="0.15"/>
-			<li Name="NpcFight_ShieldResistanceToMu" AddV="0.15"/>
-			<li Name="NpcFight_ShieldResistanceToJin" AddV="0.15"/>
-
+			<li Name="NpcFight_FabaoPowerAddP" BAddP="5"/>           <!-- 法宝威力+500% -->
+			<!-- 五行抗性全面提升 -->
+			<li Name="NpcFight_ShieldResistanceToShui" AddV="0.15"/>  <!-- 水属性抗性+15% -->
+			<li Name="NpcFight_ShieldResistanceToHuo" AddV="0.15"/>  <!-- 火属性抗性+15% -->
+			<li Name="NpcFight_ShieldResistanceToTu" AddV="0.15"/>   <!-- 土属性抗性+15% -->
+			<li Name="NpcFight_ShieldResistanceToMu" AddV="0.15"/>   <!-- 木属性抗性+15% -->
+			<li Name="NpcFight_ShieldResistanceToJin" AddV="0.15"/>  <!-- 金属性抗性+15% -->
 		</Properties>
 		<Skills>
-			<li Name="Fabao" LevelOver="15"/>
+			<li Name="Fabao" LevelOver="15"/>                      <!-- 需要法宝技能等级大于15 -->
 		</Skills>
 	</Modifier> 
 
+	<!-- 丛云剑意：需要屏障技能 -->
 	<Modifier Name="LQDX丛云剑意" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -216,17 +219,15 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcFight_FabaoPowerAddP" AddP="5"/>
-			<li Name="NpcFight_FabaoLingRecoverAddP" BAddP="0.2"/>
-
+			<li Name="NpcFight_FabaoPowerAddP" AddP="5"/>           <!-- 法宝威力+5% -->
+			<li Name="NpcFight_FabaoLingRecoverAddP" BAddP="0.2"/>  <!-- 法宝灵气恢复+0.2% -->
 		</Properties>
 		<Skills>
-			<li Name="Barrier" LevelOver="-3"/>
+			<li Name="Barrier" LevelOver="-3"/>                    <!-- 需要屏障技能等级大于-3（很低要求） -->
 		</Skills>
 	</Modifier> 
 
-
-
+	<!-- 灵火百纹锻体：炼体相关效果，需要法宝技能 -->
 	<Modifier Name="LQDX灵火百纹锻体" Type="Normal">
 		<DisplayName></DisplayName>
 		<Desc></Desc>
@@ -234,14 +235,12 @@
 		<Duration>-1</Duration>
 		<Display>0</Display>
 		<Properties>
-			<li Name="NpcFight_ShieldConversionRateAddP" AddV="0.2"/>
-	<li Name="FabaoMake_LingInheritRateAddV" AddV="0.6"/>
-
+			<li Name="NpcFight_ShieldConversionRateAddP" AddV="0.2"/>  <!-- 护盾转换率+20% -->
+			<li Name="FabaoMake_LingInheritRateAddV" AddV="0.6"/>     <!-- 法宝灵气继承率+0.6 -->
 		</Properties>
 		<Skills>
-			<li Name="Fabao" LevelOver="-3"/>
+			<li Name="Fabao" LevelOver="-3"/>                        <!-- 需要法宝技能等级大于-3 -->
 		</Skills>
 	</Modifier> 
-
-
-</List></ModifierDefs>
+</List>
+</ModifierDefs>
